@@ -1,21 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gemini AI Chatbot</title>
+    <title>Gemini Pro Chat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+
+    <header>
+        <div class="header-content">
+            <span class="model-badge">Gemini 2.5 Flash</span>
+        </div>
+    </header>
+
     <div class="container">
-        <h1>Gemini AI Chatbot</h1>
-        <div id="chat-box" class="chat-box"></div>
-        <form id="chat-form">
-            <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" required />
-            <button type="submit">Send</button>
-        </form>
+        <div id="chat-box" class="chat-box">
+            <div class="message bot intro">
+                <div class="avatar"><span class="material-symbols-rounded">smart_toy</span></div>
+                <div class="bubble">Halo! Saya Gemini. Ada yang bisa saya bantu hari ini?</div>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <form id="chat-form">
+                <div id="file-preview-container" class="hidden">
+                    <div class="file-card">
+                        <span class="material-symbols-rounded icon">description</span>
+                        <span id="file-name" class="name"></span> <button type="button" id="remove-file"
+                            class="close">×</button>
+                    </div>
+                </div>
+                <div class="input-wrapper">
+                    <input type="file" id="file-input" accept="image/*,audio/*,.pdf,.txt" hidden />
+                    <button type="button" id="attach-btn" class="icon-btn" title="Upload File">
+                        <span class="material-symbols-rounded">add_circle</span>
+                    </button>
+
+                    <textarea id="user-input" placeholder="Tanya sesuatu..." rows="1"></textarea>
+
+                    <button type="submit" id="send-btn" class="send-btn" disabled>
+                        <span class="material-symbols-rounded">arrow_upward</span>
+                    </button>
+                </div>
+            </form>
+            <div class="footer-note">Gemini can make mistakes, so double-check it.</div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
